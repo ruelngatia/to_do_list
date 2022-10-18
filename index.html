@@ -48,14 +48,14 @@
 
     <div class="center" id="h">
         <div id="filter-options">
-            <i class="material-icons" onclick="closeFilter()">close</i>
+            <div class="filter-img"><i class="material-icons" onclick="closeFilter()">close</i></div>
             <ul>
                 <li onclick="removeFilter()">All</li>
                 <li onclick="inComplete()">In Complete</li>
                 <li onclick="showCompleteInfo()">Complete</li>
                     <ul id="complete-info">
                         <div><li onclick="completedOnTime()">On time</li></div>
-                        <div><li>Late</li></div>
+                        <div><li onclick="completedLate()">Late</li></div>
                     </ul>
             </ul>
         </div>

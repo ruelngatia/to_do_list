@@ -48,7 +48,7 @@ ul{
 
 }
 #filter-options i{
-    width: 100%;
+    /* width: 100%; */
     font-size: 15px;
     text-align: right;
     transition: 0.8s;
@@ -56,10 +56,14 @@ ul{
     cursor: alias;
 
 }
+.filter-img{
+    text-align: right;
+}
 
 #filter-options i:hover{
     color: red;
     font-size: 18px;
+    rotate: 90deg;
 }
 
 ul li:hover{

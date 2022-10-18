@@ -213,7 +213,7 @@ function deleteItem(event){
 function completedOnTime(){
     display = toDoList
     display = display.filter(value=>
-        new Date(value.due).getTime() <= new Date(value.completeDate).getTime()
+        new Date(value.due).getTime() > new Date(value.completeDate).getTime()
 
     )
     updateView()
@@ -222,7 +222,7 @@ function completedOnTime(){
 function completedLate(){
     display = toDoList
     display = display.filter(value=>
-        new Date(value.due).getDate() > new Date(value.completeDate).getDate()
+        new Date(value.due).getDate() <= new Date(value.completeDate).getDate()
 
     )
     updateView()
