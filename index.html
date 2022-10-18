@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   
+    <title>To do list</title>
+</head>
+<body>
+
+    <div class="edit" id="edit-h">
+        <span>Edit task</span>
+        <br>
+        <div>Title</div>
+        <input type="text" placeholder="Title" id="ed-title">
+        <br>
+        <div>Description</div>
+        <input type="text" placeholder="Description" id="ed-description" class="input-description">
+        <br>
+        <div>Title</div>
+        <input type="date" placeholder="due" id="ed-due-date">
+        <br>
+        <div>Complete</div>
+        <input type="date" placeholder="complete" id="ed-complete-date">
+        <br>
+        <button onclick="saveEdit()">Edit</button>
+    </div>
+
+    <div class="input" id="input-h">
+            <span>Add task</span>
+            <br>
+            <div>Title</div>
+            <input type="text" placeholder="Title" id="in-title">
+            <br>
+            <div>Description</div>
+            <input type="text" placeholder="Description" id="in-description" class="input-description">
+            <br>
+            <div>Due date</div>
+            <input type="date" placeholder="due" id="in-due-date">
+            <br>
+            <button onclick="fillInfo()">Add</button>
+    </div>
+
+    <div class="center" id="h">
+        <div id="filter-options">
+            <i class="material-icons" onclick="closeFilter()">close</i>
+            <ul>
+                <li onclick="removeFilter()">All</li>
+                <li onclick="inComplete()">In Complete</li>
+                <li onclick="showCompleteInfo()">Complete</li>
+                    <ul id="complete-info">
+                        <div><li onclick="completedOnTime()">On time</li></div>
+                        <div><li>Late</li></div>
+                    </ul>
+            </ul>
+        </div>
+        <div class="title">
+            <div class="left">
+                <i class="material-icons">assignment_add</i>
+                <span>To do  list</span>
+            </div>
+            <div class="right">
+                <i class="material-icons" onclick="showFilter()">filter_alt</i>
+            </div>
+        </div>
+        <div class="content" id="c">
+            <!-- <div class="list-item">
+              <div class="list-item-left">
+                <div class="l-title">Training</div> 
+                <div class="l-description">Training for sunday game</div>
+                <div class="l-small">
+                 date: 10/2/2022
+                </div>
+              </div>
+              <div class="list-item-right">
+                <i class="material-icons">info</i>
+              </div>
+            </div>
+            <div class="list-item detailed">
+                <div class="list-item-left">
+                  <div class="l-title">Training</div> 
+                  <div class="l-description">Training for sunday game</div>
+                  <div class="l-small">
+                   date: 10/2/2022
+                  </div> 
+                  <div class="l-small">
+                   due: 10/2/2022
+                  </div> 
+                  <div class="l-small">
+                   comment: 10/2/2022
+                  </div>
+                </div>
+                <div class="list-item-right">
+                  <i class="material-icons">edit</i>
+                  <i class="material-icons">delete</i>
+                </div>
+            </div> -->
+        <button class="addTask" onclick="showInput()">
+            <i class="material-icons">add</i>
+            Add Task
+        </button>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
+<style>
+    
