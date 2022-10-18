@@ -75,7 +75,7 @@ function showEdit(event){
      title.value = display[index-1].title
      description.value = display[index-1].description
      due_date.value = display[index-1].due
-     complete_date.value = display[index-1].due
+    //  complete_date.value = display[index-1].due
 
 
     indexToEdit = index
@@ -186,7 +186,7 @@ function differenceDate(due, complete){
     }else if(ans == 0){
         return 'Task was completed on time'
     }else if(ans > 0){
-        return 'task was completed' + ans + '\tday(s) earier'
+        return 'task was completed \t' + ans + '\t day(s) earier'
     }else{
         return 'Pending....'
     }
