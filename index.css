@@ -256,9 +256,13 @@ input:focus{
     border-radius: 5px;
 }
 
+.input textarea{
+    width: 70%;
+}
+
 #in-description {
-    height: 300px;
-    padding-top: 5px;
+    /* height: 300px; */
+    /* padding-top: 5px; */
 }
 
 .input  div{
@@ -269,8 +273,8 @@ input:focus{
 }
 
 #ed-description {
-    height: 250px;
-    padding-top: 5px;
+    /* height: 250px; */
+    
 }
 
 .edit  div{
@@ -278,6 +282,10 @@ input:focus{
     text-align: left;
     font-size: 12px;
     margin-bottom: 0px;
+}
+
+.edit textarea{
+    width: 70%;
 }
 
 @media screen and (max-width:800px) {

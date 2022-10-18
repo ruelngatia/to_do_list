@@ -124,7 +124,9 @@ function fillInfo(){
     toDoList.push({
         title: title,
         description:description,
-        due:due
+        due:due,
+        completeDate:''
+
     });
     
     showList()
@@ -152,10 +154,10 @@ function updateView(){
             Date due: ${element.due}
             </div> 
             <div class="l-small">
-            Date completed: ${element.completeDate == undefined ? ' Not complete': element.completeDate}
+            Date completed: ${element.completeDate == undefined ? ' Not complete':element.completeDate}
             </div> 
             <div class="l-small">
-            Comment: ${element.comment == undefined ? ' Pending...': element.comment}
+            Comment: ${element.completeDate == undefined ? ' Pending...': differenceDate(element.due,element.completeDate)}
             </div>
             </div>
             <div class="list-item-right">
@@ -168,6 +170,27 @@ function updateView(){
         document.getElementById('c').appendChild(d)
 
     });
+
+}
+
+function differenceDate(due, complete){
+    let dOne = new Date(due).getTime()
+    let dTwo = new Date(complete).getTime()
+    let ans = dOne - dTwo 
+    ans = ans / (1000 * 3600 * 24)
+
+    console.log(ans)
+
+    if( ans < 0){
+        return 'task was ' + ans + '\t day(s) late'
+    }else if(ans == 0){
+        return 'Task was completed on time'
+    }else if(ans > 0){
+        return 'task was completed' + ans + '\tday(s) earier'
+    }else{
+        return 'Pending....'
+    }
+
 
 }
 
@@ -189,28 +212,28 @@ function deleteItem(event){
 
 function completedOnTime(){
     display = toDoList
-    display = display.filter((value)=>{
-        Date(value.due) < Date(value.completeDate)
+    display = display.filter(value=>
+        new Date(value.due).getTime() <= new Date(value.completeDate).getTime()
 
-    })
+    )
     updateView()
 }
 
 function completedLate(){
     display = toDoList
-    display = display.filter((value)=>{
-        Date(value.due) > Date(value.completeDate)
+    display = display.filter(value=>
+        new Date(value.due).getDate() > new Date(value.completeDate).getDate()
 
-    })
+    )
     updateView()
 }
 
 function inComplete(){
     display = toDoList
-    display = display.filter((value)=>{
+    display = display.filter( value=>
          value.completeDate == ''
 
-    })
+    )
     updateView()
     
 }
